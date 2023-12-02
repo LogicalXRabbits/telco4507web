@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TT-45-07</title>
+    <title>#TT-45-07</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,39 +12,37 @@
   </head>
   <body>
     <nav>
-      <div class="pageLink">
-        <a class="item">Home</a>
-        <a class="item">About</a>
-        <div class="item">
-          Galery
-          <div class="dropdown">
-            <div>
-              <a>First Semester</a>
-              <a>Second Semester</a>
-              <a>Third Semester</a>
-            </div>
+      <a class="item" href="#home">Home</a>
+      <a class="item" href="#about">About</a>
+      <div class="item">
+        Galery
+        <div class="dropdown">
+          <div>
+            <a href="#first-semester">First Semester</a>
+            <a href="#second-semester">Second Semester</a>
+            <a href="#third-semester">Third Semester</a>
           </div>
         </div>
-        <a class="item">Member</a>
-        <div class="underline"></div>
       </div>
+      <a class="item" href="web page/member.html">Member</a>
+      <div class="underline"></div>
     </nav>
 
     <!-- Home Page -->
-    <div class="logo">
+    <div id="home" class="rwiggle wiggle">
       <img src="/image/logokelas.png" alt="Logo" />
     </div>
     <div class="main-page">
-      <h1>WELCOME TO <br>TT-45-07</h1>
+      <h1>WELCOME TO <br />TT-45-07</h1>
       <p>
-        perkenalkan kami adalah Family TT-45-07, web ini kami mempersembahkan
-        buat kalian jadi silahkan menikmati..
+        perkenalkan kami adalah Family TT-45-07, web ini kami <br />
+        mempersembahkan buat kalian jadi silahkan menikmati..
       </p>
       <img src="/image/bg.jpg" alt="Main Image" />
     </div>
+    <br /><br /><br /><br /><br /><br /> <br /> <br /> <br />
 
-    <!-- About Page -->
-    <div class="about-page">
+    <div id="about" class="about-page">
       <div class="card">
         <h2>About TT-45-07</h2>
         <p>
@@ -55,7 +53,6 @@
         </p>
       </div>
     </div>
-
     <script src="typ.js"></script>
   </body>
 </html>
