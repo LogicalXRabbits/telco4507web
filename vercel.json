@@ -1,15 +1,5 @@
 {
-    "version": 2,
-    "builds": [
-        {
-            "src": "/web page/typ.html",
-            "use": "@vercel/node"
-        }
-    ],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "/"
-        }
+    "rewrites": [
+        {"source": "/(.*)", "destination": ".typ.html"}
     ]
 }
