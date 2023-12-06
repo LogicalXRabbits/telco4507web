@@ -14,3 +14,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// Wait for the page to fully load
+document.addEventListener("DOMContentLoaded", function () {
+  // Hide the loader when the page is fully loaded
+  window.addEventListener("load", function () {
+    document.getElementById("loader").style.display = "none";
+  });
+});
