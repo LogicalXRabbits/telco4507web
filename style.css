@@ -111,9 +111,9 @@ nav .item:nth-child(4):hover ~ .underline {
 
 /* Main Page Styles */
 .wiggle {
-  position: center;
   right: 45%;
   height: 65%;
+  animation: wiggle 3s ease-in-out infinite;
 }
 
 .rwiggle img {
@@ -152,19 +152,6 @@ nav .item:nth-child(4):hover ~ .underline {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.wiggle {
-  position: center;
-  right: 45%;
-  height: 65%;
-}
-
-.wiggle {
-  animation: wiggle 3s ease-in-out infinite;
-}
-.wiggle .rwiggle {
-  animation: rwiggle 3s ease-in-out infinite;
-}
-
 @keyframes wiggle {
   0%,
   100% {
@@ -187,16 +174,14 @@ nav .item:nth-child(4):hover ~ .underline {
   }
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-
 .loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   height: 15px;
-  /* display: none; Remove this line */
   aspect-ratio: 5;
-  --_g: no-repeat radial-gradient(farthest-side, #000 94%, #0000);
+  --_g: no-repeat radial-gradient(farthest-side, #628ecb 94%, #0000);
   background: var(--_g), var(--_g), var(--_g), var(--_g);
   background-size: 20% 100%;
   animation: l40-1 0.75s infinite alternate, l40-2 1.5s infinite alternate;
@@ -204,14 +189,29 @@ html {
 
 @keyframes l40-1 {
   0%,
-  10% {background-position: 0 0,0 0,0 0,0 0}
-  33% {background-position: 0 0,calc(100%/3) 0,calc(100%/3) 0,calc(100%/3) 0}
-  66% {background-position: 0 0,calc(100%/3) 0,calc(2*100%/3) 0,calc(2*100%/3) 0}
+  10% {
+    background-position: 0 0, 0 0, 0 0, 0 0;
+  }
+  33% {
+    background-position: 0 0, calc(100% / 3) 0, calc(100% / 3) 0,
+      calc(100% / 3) 0;
+  }
+  66% {
+    background-position: 0 0, calc(100% / 3) 0, calc(2 * 100% / 3) 0,
+      calc(2 * 100% / 3) 0;
+  }
   90%,
-  100% {background-position: 0 0,calc(100%/3) 0,calc(2*100%/3) 0,100% 0}
+  100% {
+    background-position: 0 0, calc(100% / 3) 0, calc(2 * 100% / 3) 0, 100% 0;
+  }
 }
 @keyframes l40-2 {
-  0%,49.99% {transform: scale( 1)}
-  50%,100%  {transform: scale(-1)}
+  0%,
+  49.99% {
+    transform: scale(1);
+  }
+  50%,
+  100% {
+    transform: scale(-1);
+  }
 }
-

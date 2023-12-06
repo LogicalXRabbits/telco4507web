@@ -18,7 +18,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Hide the loader when the page is fully loaded
+// Hide the loader with a small delay when the page is fully loaded
 window.addEventListener("load", function () {
-  document.getElementById("loader").style.display = "none";
+  setTimeout(function () {
+    document.getElementById("loader").style.display = "none";
+  }, 1000); // Adjust the delay time as needed
 });
