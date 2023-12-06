@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Show the loader when the DOM is fully loaded
+  document.getElementById("loader").style.display = "block";
+
   const navLinks = document.querySelectorAll("nav a");
 
   navLinks.forEach((link) => {
@@ -15,10 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Wait for the page to fully load
-document.addEventListener("DOMContentLoaded", function () {
-  // Hide the loader when the page is fully loaded
-  window.addEventListener("load", function () {
-    document.getElementById("loader").style.display = "none";
-  });
+// Hide the loader when the page is fully loaded
+window.addEventListener("load", function () {
+  document.getElementById("loader").style.display = "none";
 });

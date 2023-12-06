@@ -153,9 +153,15 @@ nav .item:nth-child(4):hover ~ .underline {
 }
 
 .wiggle {
+  position: center;
+  right: 45%;
+  height: 65%;
+}
+
+.wiggle {
   animation: wiggle 3s ease-in-out infinite;
 }
-rwiggle wiggle .rwiggle {
+.wiggle .rwiggle {
   animation: rwiggle 3s ease-in-out infinite;
 }
 
@@ -185,18 +191,17 @@ html {
   scroll-behavior: smooth;
 }
 
-/* HTML: <div class="loader"></div> */
+
 .loader {
   height: 15px;
-  display: none;
+  /* display: none; Remove this line */
   aspect-ratio: 5;
-  --_g:no-repeat radial-gradient(farthest-side,#000 94%,#0000);
-  background: var(--_g),var(--_g),var(--_g),var(--_g);
+  --_g: no-repeat radial-gradient(farthest-side, #000 94%, #0000);
+  background: var(--_g), var(--_g), var(--_g), var(--_g);
   background-size: 20% 100%;
-  animation:
-    l40-1 .75s infinite alternate,
-    l40-2 1.5s infinite alternate; 
+  animation: l40-1 0.75s infinite alternate, l40-2 1.5s infinite alternate;
 }
+
 @keyframes l40-1 {
   0%,
   10% {background-position: 0 0,0 0,0 0,0 0}
