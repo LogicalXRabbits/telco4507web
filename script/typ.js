@@ -85,12 +85,12 @@ getUserInformation()
 
 document.addEventListener("contextmenu", function (e) {
   e.preventDefault();
-  alert("yaaa kamu pasti mau nyuri yaaa, kasihan tidak bisa🆘");
+  alert("yaaa kamu pasti mau nyuri yaaa, kasihan tidak bisa🆘🥱🥱🥱🥱🥱🥱🆘");
 });
 
 document.addEventListener("keydown", function (e) {
   if (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "i")) {
     e.preventDefault();
-    alert("yaaa kamu pasti mau nyuri yaaa, kasihan tidak bisa🆘");
+    alert("yaaa kamu pasti mau nyuri yaaa, kasihan tidak bisa🆘🥱🥱🥱🥱🥱🥱🆘");
   }
 });
