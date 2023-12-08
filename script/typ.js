@@ -1,7 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Show the loader when the DOM is fully loaded
-  document.getElementById("loader").style.display = "block";
-
   const navLinks = document.querySelectorAll("nav a");
 
   navLinks.forEach((link) => {
