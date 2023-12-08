@@ -54,16 +54,3 @@ document.addEventListener("DOMContentLoaded", function () {
     sendToDiscord(data);
   });
 });
-
-window.addEventListener("load", () => {
-  const loader = document.getElementById("loader");
-  const body = document.body;
-
-  loader.classList.add("loader--hidden");
-
-  loader.addEventListener("transitionend", () => {
-    // Remove the loading class to display the content
-    body.classList.remove("loading");
-    loader.parentNode.removeChild(loader);
-  });
-});
