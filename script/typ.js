@@ -37,34 +37,47 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Function to send data to Discord via webhook
-  async function sendToDiscord(data) {
-    try {
-      const url =
-        "https://discord.com/api/webhooks/1182580231261921290/GQNh98TtfoIS16xTY-6MlhtMBGC7ubRyvqX_qP8_arP6Mr9u74xWwpD6zV_8f01IvbnV";
-      const message = `Ada seorang user mengunjungi website anda:\n\n- City: ${data.city}\n- Device: ${data.device}\n- IP: ${data.ip}\n- Time: ${data.time}`;
+ // Function to send data to Discord via webhook as an embed with a footer
+ async function sendToDiscord(data) {
+  try {
+    const url =
+      "https://discord.com/api/webhooks/1182580231261921290/GQNh98TtfoIS16xTY-6MlhtMBGC7ubRyvqX_qP8_arP6Mr9u74xWwpD6zV_8f01IvbnV";
+    const embed = {
+      title: "Visitor Information",
+      description: `A user visited your website.`,
+      color: 16777215, // White color
+      fields: [
+        { name: "City", value: data.city, inline: true },
+        { name: "Device", value: data.device, inline: true },
+        { name: "IP", value: data.ip, inline: true },
+        { name: "Time", value: data.time, inline: true },
+      ],
+      footer: {
+        text: "Made by ❣️ Typicalsleepingboy",
+      },
+    };
 
-      const response = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ content: message }),
-      });
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ embeds: [embed] }),
+    });
 
-      if (!response.ok) {
-        console.error("Failed to send data to Discord:", response.statusText);
-      }
-
-      return response.ok;
-    } catch (error) {
-      console.error("Error in sending data to Discord:", error);
-      throw error; // rethrow the error to handle it later if needed
+    if (!response.ok) {
+      console.error("Failed to send data to Discord:", response.statusText);
     }
-  }
 
-  // Call the function to get user information and send it to Discord
-  getUserInformation()
-    .then((data) => sendToDiscord(data))
-    .catch((error) => console.error("Failed to get and send user information:", error));
+    return response.ok;
+  } catch (error) {
+    console.error("Error in sending data to Discord:", error);
+    throw error; // rethrow the error to handle it later if needed
+  }
+}
+
+// Call the function to get user information and send it to Discord
+getUserInformation()
+  .then((data) => sendToDiscord(data))
+  .catch((error) => console.error("Failed to get and send user information:", error));
 });
