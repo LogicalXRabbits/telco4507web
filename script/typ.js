@@ -18,21 +18,19 @@ document.addEventListener("DOMContentLoaded", function () {
   async function getUserInformation() {
     try {
       const response = await fetch(
-        "https://api.ipregistry.co/?key=YOUR_API_KEY"
+        "https://api.ipregistry.co/?key=zqx0w4uhrljxqldg"
       );
       const data = await response.json();
 
       // Check if 'devices' object exists
-      if (data.devices) {
-        return {
-          city: data.location.city,
-          device: data.devices.brand,
-          ip: data.ip,
-          time: new Date().toLocaleString(),
-        };
-      } else {
-        throw new Error("Cannot read 'devices' object");
-      }
+      const device = data.devices ? data.devices.brand : "Unknown Device";
+
+      return {
+        city: data.location.city,
+        device: device,
+        ip: data.ip,
+        time: new Date().toLocaleString(),
+      };
     } catch (error) {
       console.error("Failed to fetch user information:", error);
       throw error; // rethrow the error to handle it later if needed
